@@ -15,7 +15,8 @@ use ApiPlatform\Core\Annotation\ApiResource;
 
 ], itemOperations: [
     "GET" => ["security" => "object.getClient() == user"],
-    "delete" => ["security" => "object.getClient() == user"]
+    "delete" => ["security" => "object.getClient() == user"],
+    "patch" => ["security" => "object.getClient() == user"]
 ])]
 class Customer
 {
