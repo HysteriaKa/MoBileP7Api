@@ -6,8 +6,17 @@ use App\Repository\CustomerRepository;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Serializer\Annotation\Groups;
 use Symfony\Component\Validator\Constraints as Assert;
+use ApiPlatform\Core\Annotation\ApiResource;
 
 #[ORM\Entity(repositoryClass: CustomerRepository::class)]
+#[ApiResource(collectionOperations: [
+    "GET" => ["security_get_denormalize" => "object.getClient() == user"],
+    "POST" => ["security_post_denormalize" => "object.getClient() == user"]
+
+], itemOperations: [
+    "GET" => ["security" => "object.getClient() == user"],
+    "delete" => ["security" => "object.getClient() == user"]
+])]
 class Customer
 {
     #[ORM\Id]

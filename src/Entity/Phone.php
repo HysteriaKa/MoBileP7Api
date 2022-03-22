@@ -5,8 +5,18 @@ namespace App\Entity;
 use App\Repository\PhoneRepository;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Serializer\Annotation\Groups;
+use ApiPlatform\Core\Annotation\ApiResource;
 
 #[ORM\Entity(repositoryClass: PhoneRepository::class)]
+#[ApiResource(
+    collectionOperations:[
+        "GET"
+    ],
+    itemOperations:[
+        "GET"
+    ]
+)]
+
 class Phone
 {
     #[ORM\Id]
