@@ -58,13 +58,19 @@ You can create a user in database by running this command
    
 php bin/console app:create-user email@email.com 1password
    ```
+I use lexit JWT Authentication bundle [https://github.com/lexik/LexikJWTAuthenticationBundle](https://github.com/lexik/LexikJWTAuthenticationBundle)
 
+You will have to generate your keys with this commande 
+   ```sh
+   
+$ php bin/console lexik:jwt:generate-keypair
+   ```
 
 <!-- USAGE EXAMPLES -->
 ## Usage
 
 This app is made to learn how to expose APi with Symfony.
-
+Documentation Api is accessible at localhost/api
 
 
 
