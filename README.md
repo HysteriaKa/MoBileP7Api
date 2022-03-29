@@ -64,6 +64,7 @@ php bin/console app:create-user email@email.com 1password
 ## Usage
 
 This app is made to learn how to expose APi with Symfony.
+I choose to use API PLATEFORM
 
 
 
@@ -80,7 +81,7 @@ It's all free if it can help anyone running this course.
 ## Contact
 
 
-Project Link: [https://github.com/HysteriaKa/P6b-Snowboard.git](https://github.com/HysteriaKa/P6b-Snowboard.git)
+Project Link: [https://github.com/HysteriaKa/MoBileP7Api.git](https://github.com/HysteriaKa/MoBileP7Api.git)
 
-Codacy
-[![Codacy Badge](https://app.codacy.com/project/badge/Grade/05f7c717966c4a2ca563a599001f454f)](https://www.codacy.com/gh/HysteriaKa/P6b-Snowboard/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=HysteriaKa/P6b-Snowboard&amp;utm_campaign=Badge_Grade)
+Sonarcloud
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=HysteriaKa_MoBileP7Api&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=HysteriaKa_MoBileP7Api)
