@@ -16,7 +16,8 @@ use ApiPlatform\Core\Annotation\ApiResource;
 
     ],
     itemOperations: [
-        "GET" => ["security" => "object == user"]
+        "GET" => ["security" => "object == user",
+        'cache_headers'=>['max_age'=>6000, 'shared_max_age'=>120]]
     ]
 )]
 class User implements UserInterface, PasswordAuthenticatedUserInterface
