@@ -80,7 +80,9 @@ It's all free if it can help anyone running this course.
 ## Contact
 
 
-Project Link: [https://github.com/HysteriaKa/P6b-Snowboard.git](https://github.com/HysteriaKa/P6b-Snowboard.git)
+Project Link: [https://github.com/HysteriaKa/MoBileP7Api.git](https://github.com/HysteriaKa/MoBileP7Api.git)
 
-Codacy
-[![Codacy Badge](https://app.codacy.com/project/badge/Grade/05f7c717966c4a2ca563a599001f454f)](https://www.codacy.com/gh/HysteriaKa/P6b-Snowboard/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=HysteriaKa/P6b-Snowboard&amp;utm_campaign=Badge_Grade)
+[![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=HysteriaKa_MoBileP7Api&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=HysteriaKa_MoBileP7Api)
+[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=HysteriaKa_MoBileP7Api&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=HysteriaKa_MoBileP7Api)
+
+
