@@ -2,14 +2,13 @@
 
 namespace App\Entity;
 
-use Doctrine\ORM\Mapping as ORM;
-use App\Controller\UserController;
 use App\Repository\UserRepository;
-use Doctrine\Common\Collections\Collection;
-use ApiPlatform\Core\Annotation\ApiResource;
 use Doctrine\Common\Collections\ArrayCollection;
-use Symfony\Component\Security\Core\User\UserInterface;
+use Doctrine\Common\Collections\Collection;
+use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
+use Symfony\Component\Security\Core\User\UserInterface;
+use ApiPlatform\Core\Annotation\ApiResource;
 
 #[ORM\Entity(repositoryClass: UserRepository::class)]
 #[ApiResource(
@@ -17,10 +16,7 @@ use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 
     ],
     itemOperations: [
-        'GET' => ['security' => 'object == user'],
-        'getNbrCustomers'=>['method' => 'GET',
-        'path'=>'/user/{id}/customers/count',
-        'controller'=>UserController::class]
+        "GET" => ["security" => "object == user"]
     ]
 )]
 class User implements UserInterface, PasswordAuthenticatedUserInterface
