@@ -2,13 +2,18 @@
 
 namespace App\Entity;
 
-use App\Repository\PhoneRepository;
 use Doctrine\ORM\Mapping as ORM;
-use Symfony\Component\Serializer\Annotation\Groups;
+use App\Repository\PhoneRepository;
+use ApiPlatform\Core\Annotation\ApiFilter;
 use ApiPlatform\Core\Annotation\ApiResource;
+use Symfony\Component\Serializer\Annotation\Groups;
+use ApiPlatform\Core\Bridge\Doctrine\Orm\Filter\RangeFilter;
 
 #[ORM\Entity(repositoryClass: PhoneRepository::class)]
 #[ApiResource(
+    attributes:[
+        'order' => ['price' => 'ASC']
+    ],
     collectionOperations:[
         "GET"
     ],
@@ -16,7 +21,11 @@ use ApiPlatform\Core\Annotation\ApiResource;
         "GET"
     ]
 )]
+#[ApiFilter(
+    RangeFilter::class,
+    properties:['price']
 
+)]
 class Phone
 {
     #[ORM\Id]

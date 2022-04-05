@@ -2,11 +2,15 @@
 
 namespace App\Entity;
 
-use App\Repository\CustomerRepository;
+use DateTime;
 use Doctrine\ORM\Mapping as ORM;
+use App\Repository\CustomerRepository;
+use ApiPlatform\Core\Annotation\ApiFilter;
+use ApiPlatform\Core\Annotation\ApiResource;
 use Symfony\Component\Serializer\Annotation\Groups;
 use Symfony\Component\Validator\Constraints as Assert;
-use ApiPlatform\Core\Annotation\ApiResource;
+use ApiPlatform\Core\Bridge\Doctrine\Orm\Filter\OrderFilter;
+use ApiPlatform\Core\Bridge\Doctrine\Orm\Filter\SearchFilter;
 
 #[ORM\Entity(repositoryClass: CustomerRepository::class)]
 #[ApiResource(collectionOperations: [
@@ -18,6 +22,16 @@ use ApiPlatform\Core\Annotation\ApiResource;
     "delete" => ["security" => "object.getClient() == user"],
     "patch" => ["security" => "object.getClient() == user"]
 ])]
+#[ApiFilter(
+    SearchFilter::class,
+    properties:['lastname'=>'ipartial']
+
+)]
+#[ApiFilter(
+    OrderFilter::class,
+    properties:['lastname','firstname']
+
+)]
 class Customer
 {
     #[ORM\Id]
@@ -40,6 +54,13 @@ class Customer
     #[ORM\JoinColumn(nullable: false)]
     private $client;
 
+    #[ORM\Column(type: 'datetime')]
+    private $created_at;
+
+    public function __construct()
+    {
+        $this->created_at =new DateTime();
+    }
     public function getId(): ?int
     {
         return $this->id;
@@ -77,6 +98,18 @@ class Customer
     public function setClient(?User $client): self
     {
         $this->client = $client;
+
+        return $this;
+    }
+
+    public function getCreatedAt(): ?\DateTimeInterface
+    {
+        return $this->created_at;
+    }
+
+    public function setCreatedAt(\DateTimeInterface $created_at): self
+    {
+        $this->created_at = $created_at;
 
         return $this;
     }
