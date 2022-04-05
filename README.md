@@ -90,5 +90,6 @@ Project Link: [https://github.com/HysteriaKa/MoBileP7Api.git](https://github.com
 
 [![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=HysteriaKa_MoBileP7Api&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=HysteriaKa_MoBileP7Api)
 [![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=HysteriaKa_MoBileP7Api&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=HysteriaKa_MoBileP7Api)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/8dd5e9119b4e45aca2540e83b1ee3832)](https://www.codacy.com/gh/HysteriaKa/MoBileP7Api/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=HysteriaKa/MoBileP7Api&amp;utm_campaign=Badge_Grade)
 
 
