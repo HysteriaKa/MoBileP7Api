@@ -12,14 +12,18 @@ use ApiPlatform\Core\Bridge\Doctrine\Orm\Filter\RangeFilter;
 #[ORM\Entity(repositoryClass: PhoneRepository::class)]
 #[ApiResource(
     attributes:[
-        'order' => ['price' => 'ASC']
+        'order' => ['price' => 'ASC'],
+        "pagination_maximum_items_per_page" => 10
+        
     ],
     collectionOperations:[
         "GET"
     ],
     itemOperations:[
         "GET"
-    ]
+    ],
+    
+    
 )]
 #[ApiFilter(
     RangeFilter::class,
