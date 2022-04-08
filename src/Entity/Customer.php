@@ -12,7 +12,9 @@ use Symfony\Component\Validator\Constraints as Assert;
 use ApiPlatform\Core\Bridge\Doctrine\Orm\Filter\OrderFilter;
 use ApiPlatform\Core\Bridge\Doctrine\Orm\Filter\SearchFilter;
 
+
 #[ORM\Entity(repositoryClass: CustomerRepository::class)]
+
 #[ApiResource(collectionOperations: [
     "GET" => ["security_get_denormalize" => "object.getClient() == user"],
     "POST" => ["security_post_denormalize" => "object.getClient() == user"]
@@ -55,7 +57,12 @@ class Customer
     private $client;
 
     #[ORM\Column(type: 'datetime')]
+    #[Groups(['read:collection'])]
     private $created_at;
+
+    #[ORM\Column(type: 'string', length: 100, unique: true)]
+    #[Groups(['read:collection'])]
+    private $email;
 
     public function __construct()
     {
@@ -110,6 +117,18 @@ class Customer
     public function setCreatedAt(\DateTimeInterface $created_at): self
     {
         $this->created_at = $created_at;
+
+        return $this;
+    }
+
+    public function getEmail(): ?string
+    {
+        return $this->email;
+    }
+
+    public function setEmail(string $email): self
+    {
+        $this->email = $email;
 
         return $this;
     }
