@@ -53,14 +53,14 @@ or you can use the fixture by running
 php bin/console doctrine:fixtures:load
    ```
 
-You can create a user in database by running this command 
+You can create as many users as you need in database by running this command 
    ```sh
    
 php bin/console app:create-user email@email.com 1password
    ```
 I use lexit JWT Authentication bundle [https://github.com/lexik/LexikJWTAuthenticationBundle](https://github.com/lexik/LexikJWTAuthenticationBundle)
 
-You will have to generate your keys with this commande 
+You will have to generate your keys with this command 
    ```sh
    
 $ php bin/console lexik:jwt:generate-keypair
