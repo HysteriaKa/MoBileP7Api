@@ -12,8 +12,8 @@ class AppFixtures extends Fixture
     public function load(ObjectManager $manager): void
     {
         $faker = Factory::create('fr_FR');
-        $colors = ['black', 'white', 'red', 'blue', 'pink', 'grey','black', 'white', 'red', 'blue', 'pink', 'grey'];
-        for ($i = 0; $i < 12; $i++) {
+        $colors = ['black', 'white', 'red', 'blue', 'pink', 'grey','black', 'white', 'red', 'blue', 'pink', 'grey','pink', 'grey','black', 'white', 'red', 'blue', 'pink', 'grey','pink', 'grey','black', 'white', 'red', 'blue', 'pink', 'grey'];
+        for ($i = 0; $i < 20; $i++) {
             $phone = new Phone();
             $phone->setName($faker->unique()->words(mt_rand(2, 3), true));
             $phone->setColor($colors[$i]);
