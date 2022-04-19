@@ -25,7 +25,7 @@ Php = 8.0.13
 <!-- GETTING STARTED -->
 ## Getting Started
 
-You have to clone this project
+You have to clone this project or you can use code and DBB sent
 
 ### Prerequisites
 
